@@ -41,7 +41,6 @@ Consulta dados meteorológicos (requer autenticação).
 }
 ```
 
-## Print do funncionamento
+## GIF do funcionamento
 
-![Exemplo Registrar](ExemploRegistrarWhite.png#only-light)
-![Exemplo Registrar](ExemploRegistrarDark.png#only-dark)
+![Exemplo Registrar](ExemploRegistrar.gif)

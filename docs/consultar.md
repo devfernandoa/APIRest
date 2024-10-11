@@ -36,7 +36,6 @@ Registra um novo usuário na aplicação.
 }
 ```
 
-## Print do funncionamento
+## Gif do funcionamento
 
-![Exemplo Consultar](ExemploConsultarWhite.png#only-light)
-![Exemplo Consultar](ExemploConsultarDark.png#only-dark)
+![Exemplo Registrar](ExemploRegistrar.gif)

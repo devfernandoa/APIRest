@@ -321,6 +321,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#como-usar-a-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como Usar a API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Como Usar a API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pelo-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pelo terminal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pela-documentacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pela documentação
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -511,6 +544,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#como-usar-a-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como Usar a API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Como Usar a API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pelo-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pelo terminal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pela-documentacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pela documentação
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -532,9 +598,9 @@
 <p>Esta API permite que os usuários registrem-se, façam login e consultem dados meteorológicos. A API é construída usando FastAPI e PostgreSQL, e é executada em contêineres Docker.</p>
 <h2 id="endpoints">Endpoints</h2>
 <ul>
-<li><a href="docs/registrar.md">Registrar</a></li>
-<li><a href="docs/login.md">Login</a></li>
-<li><a href="docs/consultar.md">Consultar</a></li>
+<li><a href="registrar/">Registrar</a></li>
+<li><a href="login/">Login</a></li>
+<li><a href="consultar/">Consultar</a></li>
 </ul>
 <h2 id="configuracao-e-execucao">Configuração e Execução</h2>
 <h3 id="pre-requisitos">Pré-requisitos</h3>
@@ -553,6 +619,27 @@
 <li>Accesse a documentação da API em:
    <code>http://localhost:8000/docs</code></li>
 </ol>
+<p><img alt="Gif Tutorial" src="Tutorial.gif" /></p>
+<h2 id="como-usar-a-api">Como Usar a API</h2>
+<h3 id="pelo-terminal">Pelo terminal</h3>
+<p>Para acessar a API pelo terminal, você pode usar o comando <code>curl</code>. Aqui estão alguns exemplos de como usar a API:</p>
+<ul>
+<li>
+<p>Registrar um novo usuário:</p>
+<p><code>curl -X POST http://localhost:8000/registrar -d '{"nome": "teste", "email": "teste@teste.com", "senha": "teste"}'</code></p>
+</li>
+<li>
+<p>Fazer login:</p>
+<p><code>curl -X POST http://localhost:8000/login -d '{"email": "teste@teste.com", "senha": "teste"}'</code></p>
+</li>
+<li>
+<p>Consultar dados meteorológicos:</p>
+<p><code>curl -X GET http://localhost:8000/consultar \
+-H 'Authorization: Bearer {token_jwt_aqui}'</code></p>
+</li>
+</ul>
+<h3 id="pela-documentacao">Pela documentação</h3>
+<p>A aplicação possui uma documentação interativa que pode ser acessada em <code>http://localhost:8000/docs</code>. A documentação permite que você teste os endpoints da API e veja exemplos de requisições e respostas.</p>
 
 
 
