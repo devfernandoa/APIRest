@@ -57,4 +57,4 @@ Para mais informações sobre como utilizar o projeto, [acesse a documentação 
 
 Feito por: Fernando Alzueta
 
-O projeto foi desenvolvido como parte do curso de Computação em Nuvem do Insper. 
+O projeto foi desenvolvido como parte do curso de Computação em Nuvem do Insper.
