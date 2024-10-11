@@ -2,6 +2,8 @@
 
 Este projeto é uma API REST construída com FastAPI e PostgreSQL. A API permite registrar usuários, autenticar e consultar dados meteorológicos.
 
+[Acesse a documentação aqui!](https://devfernandoa.github.io/APIRest)
+
 ## Pré-requisitos
 
 - Docker
