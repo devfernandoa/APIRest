@@ -4,6 +4,22 @@ Este projeto é uma API REST construída com FastAPI e PostgreSQL. A API permite
 
 [Acesse a documentação aqui!](https://devfernandoa.github.io/APIRest)
 
+[Imagem no Docker Hub](https://hub.docker.com/repository/docker/devfernandoa/apirest)
+
+[Video de Demonstração](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+
+## Informações sobre o projeto
+
+Feito por: Fernando Alzueta
+
+O projeto foi desenvolvido como parte do curso de Computação em Nuvem do Insper. Ele possui três endpoints principais:
+
+- Registrar
+- Login
+- Consultar
+
+O endpoint de registrar permite que um usuário se registre na aplicação. O endpoint de login permite que um usuário autentique-se na aplicação. O endpoint de consultar permite que um usuário autenticado consulte dados meteorológicos, obtidos na API [open-meteo](https://open-meteo.com/), com a localização do Insper.3
+
 ## Pré-requisitos
 
 - Docker

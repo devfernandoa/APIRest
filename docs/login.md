@@ -36,3 +36,8 @@ Autentica um usuário na aplicação.
             s76o9X4UIANSI-aTF8UhqnBYyIRWw_WH4ut8Xqmo6i0"
 }
 ```
+
+## Print do funncionamento
+
+![Exemplo Login](ExemploLoginWhite.png#only-light)
+![Exemplo Login](ExemploLoginDark.png#only-dark)

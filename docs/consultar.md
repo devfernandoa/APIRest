@@ -35,3 +35,8 @@ Registra um novo usuário na aplicação.
     "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkRpc2NpcGxpbmEgQ2xvdWQiLCJpYXQiOjE1MTYyMzkwMjJ9.s76o9X4UIANSI-aTF8UhqnBYyIRWw_WH4ut8Xqmo6i0"
 }
 ```
+
+## Print do funncionamento
+
+![Exemplo Consultar](ExemploConsultarWhite.png#only-light)
+![Exemplo Consultar](ExemploConsultarDark.png#only-dark)
