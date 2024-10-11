@@ -1,0 +1,9 @@
+site_name: API REST com FastAPI e PostgreSQL
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Endpoints:
+    - Registrar: registrar.md
+    - Login: login.md
+    - Consultar: consultar.md

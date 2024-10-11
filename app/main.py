@@ -47,10 +47,7 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 # Função para criar um token JWT
 def create_access_token(data: dict):
-    to_encode = data.copy()
-    expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
-    to_encode.update({"exp": expire})
-    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+    encoded_jwt = jwt.encode(data, SECRET_KEY, algorithm=ALGORITHM)
     return encoded_jwt
 
 # Função para verificar o token JWT
@@ -90,9 +87,8 @@ def registrar(user: User, db: Session = Depends(get_db)):
 
     # Dados para o token JWT
     token_data = {
-        "sub": str(new_user.id),
-        "name": new_user.nome,
-        "iat": datetime.utcnow()
+        "email": user.email,
+        "senha": user.senha
     }
 
     # Criar o token JWT
@@ -115,9 +111,8 @@ def login(login: Login, db: Session = Depends(get_db)):
 
     # Dados para o token JWT
     token_data = {
-        "sub": str(db_user.id),
-        "name": db_user.nome,
-        "iat": datetime.utcnow()
+        "email": login.email,
+        "senha": login.senha
     }
 
     # Criar o token JWT
@@ -130,7 +125,7 @@ def login(login: Login, db: Session = Depends(get_db)):
 @app.get("/consultar")
 def consultar(request: Request, token: str = Depends(oauth2_scheme)):
     # Verificar o token JWT
-    verify_token(token)
+    payload = verify_token(token)
 
     # Realizar a requisição à API do Open-Meteo
     url = "https://api.open-meteo.com/v1/forecast?latitude=-46.67&longitude=-23.59&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m"
@@ -156,16 +151,16 @@ def consultar(request: Request, token: str = Depends(oauth2_scheme)):
         "longitude": data.get("longitude"),
         "timezone": data.get("timezone"),
         "current": {
-            "time": data["current"].get("time")
-            #"temperature_2m": data["current"].get("temperature_2m"),
-            #"wind_speed_10m": data["current"].get("wind_speed_10m")
+            "time": data["current"].get("time"),
+            "temperature_2m": data["current"].get("temperature_2m"),
+            "wind_speed_10m": data["current"].get("wind_speed_10m")
         },
         "hourly": [
             {
                 "time": time,
-                "temperature_2m": temp
-                #"relative_humidity_2m": humidity,
-                #"wind_speed_10m": wind_speed
+                "temperature_2m": temp,
+                "relative_humidity_2m": humidity,
+                "wind_speed_10m": wind_speed
             }
             for time, temp, humidity, wind_speed in zip(
                 hourly_data["time"],
