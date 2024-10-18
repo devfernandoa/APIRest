@@ -11,7 +11,7 @@ import bcrypt
 import requests
 
 # Configura do JWT
-SECRET_KEY = "SENHA_MUITO_BOA_UAU@!@#$"
+SECRET_KEY = os.getenv("SECRET_KEY", "SENHA_MUITO_BOA_UAU@!@#$")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 

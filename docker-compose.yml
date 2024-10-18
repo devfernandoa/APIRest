@@ -4,11 +4,9 @@ services:
   db:
     image: postgres:13
     environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: dbname
-    ports:
-      - "5432:5432"
+      POSTGRES_USER: ${POSTGRES_USER:-user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
+      POSTGRES_DB: ${POSTGRES_DB:-dbname}
 
   web:
     image: fernandoalzueta/apirest:web
@@ -20,7 +18,7 @@ services:
     depends_on:
       - db
     environment:
-      DATABASE_URL: postgresql://user:password@db:5432/dbname
+      DATABASE_URL: postgresql://${POSTGRES_USER:-user}:${POSTGRES_PASSWORD:-password}@db:5432/${POSTGRES_DB:-dbname}1
 
 volumes:
   postgres_data:
