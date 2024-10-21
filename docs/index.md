@@ -78,4 +78,6 @@ A aplicação possui uma documentação interativa que pode ser acessada em `htt
 
 ## Exemplo do funcionamento
 
-![Video Exemplo](exemplo.mp4)
+<video width="640"  controls>
+    <source src="exemplo.mp4" type="video/mp4">
+</video>
