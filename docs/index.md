@@ -22,18 +22,25 @@ Esta API permite que os usuários registrem-se, façam login e consultem dados m
 ### Passos para executar o projeto
 
 1. Clone o repositório:
+
    ```
    git clone https://github.com/devfernandoa/APIRest/
     ```
+
 2. Acesse o diretório do projeto:
+
    ```
    cd APIRest
     ```
+
 3. Rode o docker-compose:
+
    ```
    docker-compose up
     ```
+
 4. Accesse a documentação da API em:
+
    ```
    http://localhost:8000/docs
     ```
@@ -68,3 +75,7 @@ Para acessar a API pelo terminal, você pode usar o comando `curl`. Aqui estão 
 ### Pela documentação
 
 A aplicação possui uma documentação interativa que pode ser acessada em `http://localhost:8000/docs`. A documentação permite que você teste os endpoints da API e veja exemplos de requisições e respostas.
+
+## Exemplo do funcionamento
+
+![Video Exemplo](exemplo.mp4)
