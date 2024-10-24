@@ -21,25 +21,17 @@ Esta API permite que os usuários registrem-se, façam login e consultem dados m
 
 ### Passos para executar o projeto
 
-1. Clone o repositório:
+1. Baixe o docker compose aqui:
+
+   [Docker Compose](https://raw.githubusercontent.com/devfernandoa/APIRest/blob/main/compose.yml)
+
+2. Rode o comando abaixo para subir os contêineres:
 
    ```
-   git clone https://github.com/devfernandoa/APIRest/
-    ```
-
-2. Acesse o diretório do projeto:
-
+   docker compose up -d
    ```
-   cd APIRest
-    ```
 
-3. Rode o docker-compose:
-
-   ```
-   docker-compose up
-    ```
-
-4. Accesse a documentação da API em:
+3. Accesse a documentação da API em:
 
    ```
    http://localhost:8000/docs
