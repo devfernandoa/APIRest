@@ -33,24 +33,6 @@ Para mais informações sobre como utilizar o projeto, [acesse a documentação 
 
     <a href="https://raw.githubusercontent.com/devfernandoa/APIRest/main/compose.yml" id="downloadLink">Baixar Arquivo</a>
 
-    <script>
-    document.getElementById('downloadLink').addEventListener('click', function(event) {
-        event.preventDefault();
-        const url = this.href;
-        const fileName = 'compose.yml';
-
-        fetch(url)
-        .then(response => response.blob())
-        .then(blob => {
-            const link = document.createElement('a');
-            link.href = window.URL.createObjectURL(blob);
-            link.download = fileName;
-            link.click();
-        })
-        .catch(() => alert('Falha ao baixar o arquivo.'));
-    });
-    </script>
-
 2. Rode o comando
 
         docker-compose up -d
