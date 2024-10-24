@@ -29,29 +29,37 @@ Para mais informações sobre como utilizar o projeto, [acesse a documentação 
 
 ### Passos para executar o projeto
 
-1. Clone o repositório:
+1. Baixe o docker compose aqui:
 
-   ```sh
-   git clone https://github.com/devfernandoa/APIRest.git
+    <a href="https://raw.githubusercontent.com/devfernandoa/APIRest/main/compose.yml" id="downloadLink">Baixar Arquivo</a>
+
+    <script>
+    document.getElementById('downloadLink').addEventListener('click', function(event) {
+        event.preventDefault();
+        const url = this.href;
+        const fileName = 'compose.yml';
+
+        fetch(url)
+        .then(response => response.blob())
+        .then(blob => {
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = fileName;
+            link.click();
+        })
+        .catch(() => alert('Falha ao baixar o arquivo.'));
+    });
+    </script>
+
+2. Rode o comando
+
+        docker-compose up -d
+
+3. Accesse a documentação da API em:
+
    ```
-
-2. Acesse o diretório do projeto:
-
-   ```sh
-   cd APIRest
-   ```
-
-3. Rode o docker-compose:
-
-   ```sh
-   docker-compose up
-   ```
-
-4. Accesse a documentação da API em:
-
-   ```sh
    http://localhost:8000/docs
-   ```
+    ```
 
 ## Autoria
 

@@ -23,13 +23,29 @@ Esta API permite que os usuários registrem-se, façam login e consultem dados m
 
 1. Baixe o docker compose aqui:
 
-   [Docker Compose](https://raw.githubusercontent.com/devfernandoa/APIRest/blob/main/compose.yml)
+    <a href="https://raw.githubusercontent.com/devfernandoa/APIRest/main/compose.yml" id="downloadLink">Baixar Arquivo</a>
 
-2. Rode o comando abaixo para subir os contêineres:
+    <script>
+    document.getElementById('downloadLink').addEventListener('click', function(event) {
+        event.preventDefault();
+        const url = this.href;
+        const fileName = 'compose.yml';
 
-   ```
-   docker compose up -d
-   ```
+        fetch(url)
+        .then(response => response.blob())
+        .then(blob => {
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = fileName;
+            link.click();
+        })
+        .catch(() => alert('Falha ao baixar o arquivo.'));
+    });
+    </script>
+
+2. Rode o comando
+
+        docker-compose up -d
 
 3. Accesse a documentação da API em:
 
