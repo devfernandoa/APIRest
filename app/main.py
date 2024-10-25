@@ -47,7 +47,9 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 # Função para criar um token JWT
 def create_access_token(data: dict):
-    encoded_jwt = jwt.encode(data, SECRET_KEY, algorithm=ALGORITHM)
+    to_encode = data.copy()
+    to_encode.update({"iat": datetime.utcnow()})
+    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
     return encoded_jwt
 
 # Função para verificar o token JWT
@@ -88,7 +90,7 @@ def registrar(user: User, db: Session = Depends(get_db)):
     # Dados para o token JWT
     token_data = {
         "email": user.email,
-        "senha": user.senha
+        "nome": user.nome
     }
 
     # Criar o token JWT
@@ -112,7 +114,7 @@ def login(login: Login, db: Session = Depends(get_db)):
     # Dados para o token JWT
     token_data = {
         "email": login.email,
-        "senha": login.senha
+        "nome": db_user.nome
     }
 
     # Criar o token JWT

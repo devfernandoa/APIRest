@@ -628,19 +628,35 @@
 </ul>
 <h3 id="passos-para-executar-o-projeto">Passos para executar o projeto</h3>
 <ol>
-<li>Clone o repositório:</li>
-</ol>
-<p><code>git clone https://github.com/devfernandoa/APIRest/</code></p>
-<ol>
-<li>Acesse o diretório do projeto:</li>
-</ol>
-<p><code>cd APIRest</code></p>
-<ol>
-<li>Rode o docker-compose:</li>
-</ol>
-<p><code>docker-compose up</code></p>
-<ol>
-<li>Accesse a documentação da API em:</li>
+<li>
+<p>Baixe o docker compose aqui:</p>
+<p><a href="https://raw.githubusercontent.com/devfernandoa/APIRest/main/compose.yml" id="downloadLink">Baixar Arquivo</a></p>
+<p><script>
+document.getElementById('downloadLink').addEventListener('click', function(event) {
+    event.preventDefault();
+    const url = this.href;
+    const fileName = 'compose.yml';</p>
+<pre><code>fetch(url)
+.then(response =&gt; response.blob())
+.then(blob =&gt; {
+    const link = document.createElement('a');
+    link.href = window.URL.createObjectURL(blob);
+    link.download = fileName;
+    link.click();
+})
+.catch(() =&gt; alert('Falha ao baixar o arquivo.'));
+</code></pre>
+<p>});
+</script></p>
+</li>
+<li>
+<p>Rode o comando</p>
+<pre><code>docker-compose up -d
+</code></pre>
+</li>
+<li>
+<p>Accesse a documentação da API em:</p>
+</li>
 </ol>
 <p><code>http://localhost:8000/docs</code></p>
 <p><img alt="Gif Tutorial" src="Tutorial.gif" /></p>
