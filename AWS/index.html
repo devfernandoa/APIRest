@@ -10,22 +10,20 @@
       
       
       
-        <link rel="next" href="registrar/">
       
-      
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
     
     
       
-        <title>API REST com FastAPI e PostgreSQL</title>
+        <title>Deploy da aplicação no AWS - API REST com FastAPI e PostgreSQL</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,7 +42,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -70,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#api-rest-com-fastapi-e-postgresql" class="md-skip">
+        <a href="#deploy-da-aplicacao-no-aws" class="md-skip">
           Skip to content
         </a>
       
@@ -86,7 +84,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="API REST com FastAPI e PostgreSQL" class="md-header__button md-logo" aria-label="API REST com FastAPI e PostgreSQL" data-md-component="logo">
+    <a href=".." title="API REST com FastAPI e PostgreSQL" class="md-header__button md-logo" aria-label="API REST com FastAPI e PostgreSQL" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -106,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Deploy da aplicação no AWS
             
           </span>
         </div>
@@ -207,7 +205,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="API REST com FastAPI e PostgreSQL" class="md-nav__button md-logo" aria-label="API REST com FastAPI e PostgreSQL" data-md-component="logo">
+    <a href=".." title="API REST com FastAPI e PostgreSQL" class="md-nav__button md-logo" aria-label="API REST com FastAPI e PostgreSQL" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -222,30 +220,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Home
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -254,128 +232,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#visao-geral" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visão Geral
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api-aberta" class="md-nav__link">
-    <span class="md-ellipsis">
-      API Aberta
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#endpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      Endpoints
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuracao-e-execucao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuração e Execução
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Configuração e Execução">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pre-requisitos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pré-requisitos
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#passos-para-executar-o-projeto" class="md-nav__link">
-    <span class="md-ellipsis">
-      Passos para executar o projeto
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#como-usar-a-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      Como Usar a API
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Como Usar a API">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pelo-terminal" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pelo terminal
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pela-documentacao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pela documentação
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exemplo-do-funcionamento" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemplo do funcionamento
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -422,7 +278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="registrar/" class="md-nav__link">
+      <a href="../registrar/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -443,7 +299,7 @@
   
   
     <li class="md-nav__item">
-      <a href="login/" class="md-nav__link">
+      <a href="../login/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -464,7 +320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="consultar/" class="md-nav__link">
+      <a href="../consultar/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -512,102 +368,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#visao-geral" class="md-nav__link">
+  <a href="#realizacao-do-deploy" class="md-nav__link">
     <span class="md-ellipsis">
-      Visão Geral
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api-aberta" class="md-nav__link">
-    <span class="md-ellipsis">
-      API Aberta
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#endpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      Endpoints
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuracao-e-execucao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuração e Execução
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Configuração e Execução">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pre-requisitos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pré-requisitos
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#passos-para-executar-o-projeto" class="md-nav__link">
-    <span class="md-ellipsis">
-      Passos para executar o projeto
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#como-usar-a-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      Como Usar a API
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Como Usar a API">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pelo-terminal" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pelo terminal
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pela-documentacao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pela documentação
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exemplo-do-funcionamento" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemplo do funcionamento
+      Realização do Deploy
     </span>
   </a>
   
@@ -628,101 +391,110 @@
                   
 
 
-<h1 id="api-rest-com-fastapi-e-postgresql">API REST com FastAPI e PostgreSQL</h1>
-<p>Bem-vindo à documentação da API REST construída com FastAPI e PostgreSQL. Esta documentação fornece informações sobre como usar a API e seus endpoints.</p>
-<h2 id="visao-geral">Visão Geral</h2>
-<p>Esta API permite que os usuários registrem-se, façam login e consultem dados meteorológicos. A API é construída usando FastAPI e PostgreSQL, e é executada em contêineres Docker.</p>
-<h2 id="api-aberta">API Aberta</h2>
-<p>A api está disponível em:</p>
-<pre><code>http://afe6a8d3a425b40739d688eb9c38c234-697055407.us-east-1.elb.amazonaws.com/docs
-</code></pre>
-<p>Nela, você pode:</p>
-<ul>
-<li>
-<p>Registrar um novo usuário:</p>
-<p><code>curl -X POST http://afe6a8d3a425b40739d688eb9c38c234-697055407.us-east-1.elb.amazonaws.com/registrar -d '{"nome": "teste", "email": "teste@teste.com", "senha": "teste"}'</code></p>
-</li>
-<li>
-<p>Fazer login:</p>
-<p><code>curl -X POST http://afe6a8d3a425b40739d688eb9c38c234-697055407.us-east-1.elb.amazonaws.com/login -d '{"email": "teste@teste.com", "senha": "teste"}'</code></p>
-</li>
-<li>
-<p>Consultar dados meteorológicos:</p>
-<p><code>curl -X GET http://afe6a8d3a425b40739d688eb9c38c234-697055407.us-east-1.elb.amazonaws.com/consultar \
--H 'Authorization: Bearer {token_jwt_aqui}'</code></p>
-</li>
-</ul>
-<p>onaws.com</p>
-<h2 id="endpoints">Endpoints</h2>
-<ul>
-<li><a href="registrar/">Registrar</a></li>
-<li><a href="login/">Login</a></li>
-<li><a href="consultar/">Consultar</a></li>
-</ul>
-<h2 id="configuracao-e-execucao">Configuração e Execução</h2>
-<h3 id="pre-requisitos">Pré-requisitos</h3>
-<ul>
-<li>Docker</li>
-<li>Docker Compose</li>
-</ul>
-<h3 id="passos-para-executar-o-projeto">Passos para executar o projeto</h3>
+<h1 id="deploy-da-aplicacao-no-aws">Deploy da aplicação no AWS</h1>
+<p>Foi realizado o deploy da aplicação no AWS. Para acessar a documentação da aplicação, clique <a href="http://afe6a8d3a425b40739d688eb9c38c234-697055407.us-east-1.elb.amazonaws.com/docs">aqui</a>.</p>
+<p>A aplicação foi hospedada em um cluster EKS (Elastic Kubernetes Service) e está disponível em um Load Balancer. A documentação foi gerada automaticamente pelo FastAPI e está disponível no endpoint <code>/docs</code>.</p>
+<h2 id="realizacao-do-deploy">Realização do Deploy</h2>
+<p>Para realizar o deploy da aplicação no AWS, foi necessário seguir os seguintes passos (Após estar logado no AWS CLI):</p>
 <ol>
-<li>
-<p>Baixe o docker compose aqui:</p>
-<p><a href="https://raw.githubusercontent.com/devfernandoa/APIRest/main/compose.yml" id="downloadLink">Baixar Arquivo</a></p>
-<p><script>
-document.getElementById('downloadLink').addEventListener('click', function(event) {
-    event.preventDefault();
-    const url = this.href;
-    const fileName = 'compose.yml';</p>
-<pre><code>fetch(url)
-.then(response =&gt; response.blob())
-.then(blob =&gt; {
-    const link = document.createElement('a');
-    link.href = window.URL.createObjectURL(blob);
-    link.download = fileName;
-    link.click();
-})
-.catch(() =&gt; alert('Falha ao baixar o arquivo.'));
-</code></pre>
-<p>});
-</script></p>
-</li>
-<li>
-<p>Rode o comando</p>
-<pre><code>docker-compose up -d
-</code></pre>
-</li>
-<li>
-<p>Accesse a documentação da API em:</p>
-</li>
+<li>Criar um cluster EKS:</li>
 </ol>
-<p><code>http://localhost:8000/docs</code></p>
-<p><img alt="Gif Tutorial" src="Tutorial.gif" /></p>
-<h2 id="como-usar-a-api">Como Usar a API</h2>
-<h3 id="pelo-terminal">Pelo terminal</h3>
-<p>Para acessar a API pelo terminal, você pode usar o comando <code>curl</code>. Aqui estão alguns exemplos de como usar a API:</p>
-<ul>
-<li>
-<p>Registrar um novo usuário:</p>
-<p><code>curl -X POST http://localhost:8000/registrar -d '{"nome": "teste", "email": "teste@teste.com", "senha": "teste"}'</code></p>
-</li>
-<li>
-<p>Fazer login:</p>
-<p><code>curl -X POST http://localhost:8000/login -d '{"email": "teste@teste.com", "senha": "teste"}'</code></p>
-</li>
-<li>
-<p>Consultar dados meteorológicos:</p>
-<p><code>curl -X GET http://localhost:8000/consultar \
--H 'Authorization: Bearer {token_jwt_aqui}'</code></p>
-</li>
-</ul>
-<h3 id="pela-documentacao">Pela documentação</h3>
-<p>A aplicação possui uma documentação interativa que pode ser acessada em <code>http://localhost:8000/docs</code>. A documentação permite que você teste os endpoints da API e veja exemplos de requisições e respostas.</p>
-<h2 id="exemplo-do-funcionamento">Exemplo do funcionamento</h2>
-<video width="640"  controls>
-    <source src="exemplo.mp4" type="video/mp4">
-</video>
+<pre><code class="language-bash">eksctl create cluster --name fastapi-cluster --region us-east-1 --nodes 2
+</code></pre>
+<ol>
+<li>Configurar o kubectl para acessar o cluster:</li>
+</ol>
+<pre><code class="language-bash">aws eks --region us-east-1 update-kubeconfig --name fastapi-cluster
+</code></pre>
+<ol>
+<li>Criar um arquivo <code>db-deployment.yaml</code> com as configurações do deployment para a base de dados:</li>
+</ol>
+<pre><code class="language-yaml">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:13
+        env:
+          - name: POSTGRES_USER
+            value: &quot;user&quot;
+          - name: POSTGRES_PASSWORD
+            value: &quot;password&quot;
+          - name: POSTGRES_DB
+            value: &quot;dbname&quot;
+        ports:
+          - containerPort: 5432
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+spec:
+  ports:
+    - port: 5432
+  selector:
+    app: postgres
+</code></pre>
+<ol>
+<li>Criar um arquivo <code>web-deployment.yaml</code> com as configurações do deployment para a aplicação:</li>
+</ol>
+<pre><code class="language-yaml">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi
+  template:
+    metadata:
+      labels:
+        app: fastapi
+    spec:
+      containers:
+      - name: fastapi
+        image: fernandoalzueta/apirest:web
+        env:
+          - name: DATABASE_URL
+            value: &quot;postgresql://user:password@postgres:5432/dbname&quot;
+        ports:
+          - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fastapi-service
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 8000
+  selector:
+    app: fastapi
+</code></pre>
+<ol>
+<li>Aplicar os deployments no cluster:</li>
+</ol>
+<pre><code class="language-bash">kubectl apply -f db-deployment.yml
+kubectl apply -f web-deployment.yml
+</code></pre>
+<ol>
+<li>Acessar a aplicação no Load Balancer:</li>
+</ol>
+<pre><code class="language-bash">kubectl get svc fastapi-service
+</code></pre>
 
 
 
@@ -769,10 +541,10 @@ document.getElementById('downloadLink').addEventListener('click', function(event
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>
