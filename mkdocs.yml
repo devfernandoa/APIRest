@@ -1,4 +1,5 @@
 site_name: API REST com FastAPI e PostgreSQL
+repo_url: https://github.com/devfernandoa/APIRest
 theme:
   name: material
   palette:
