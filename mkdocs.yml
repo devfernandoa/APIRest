@@ -18,9 +18,13 @@ theme:
         icon: material/brightness-4
         name: Switch to system preference
 
+plugins:
+  - render_swagger
+
 nav:
   - Home: index.md
   - Endpoints:
     - Registrar: registrar.md
     - Login: login.md
     - Consultar: consultar.md
+  - Deploy No AWS: AWS.md

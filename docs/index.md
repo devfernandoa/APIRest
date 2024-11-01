@@ -6,6 +6,37 @@ Bem-vindo à documentação da API REST construída com FastAPI e PostgreSQL. Es
 
 Esta API permite que os usuários registrem-se, façam login e consultem dados meteorológicos. A API é construída usando FastAPI e PostgreSQL, e é executada em contêineres Docker.
 
+## API Aberta
+
+A api está disponível em:
+
+```
+http://afe6a8d3a425b40739d688eb9c38c234-697055407.us-east-1.elb.amazonaws.com/docs
+```
+
+Nela, você pode:
+
+- Registrar um novo usuário:
+
+    ```
+    curl -X POST http://afe6a8d3a425b40739d688eb9c38c234-697055407.us-east-1.elb.amazonaws.com/registrar -d '{"nome": "teste", "email": "teste@teste.com", "senha": "teste"}'
+    ```
+
+- Fazer login:
+
+    ```
+    curl -X POST http://afe6a8d3a425b40739d688eb9c38c234-697055407.us-east-1.elb.amazonaws.com/login -d '{"email": "teste@teste.com", "senha": "teste"}'
+    ```
+
+- Consultar dados meteorológicos:
+
+    ```
+    curl -X GET http://afe6a8d3a425b40739d688eb9c38c234-697055407.us-east-1.elb.amazonaws.com/consultar \
+    -H 'Authorization: Bearer {token_jwt_aqui}'
+    ```
+
+onaws.com
+
 ## Endpoints
 
 - [Registrar](registrar.md)
