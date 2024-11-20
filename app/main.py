@@ -80,6 +80,16 @@ def get_db():
     finally:
         db.close()
 
+def jwtBearer(credentials: HTTPAuthorizationCredentials = Depends(oauth2_scheme)):
+    token = credentials.credentials
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+    except jwt.ExpiredSignatureError:
+        raise HTTPException(status_code=403, detail="Token expirado")
+    except jwt.InvalidTokenError:
+        raise HTTPException(status_code=403, detail="Token inválido")
+    return payload
+
 # Endpoint para registrar o usuário
 @app.post("/registrar")
 def registrar(user: User, db: Session = Depends(get_db)):
@@ -135,7 +145,7 @@ def login(login: Login, db: Session = Depends(get_db)):
 
 # Endpoint para consultar dados
 @app.get("/consultar")
-def consultar(request: Request, token: str = Depends(oauth2_scheme)):
+def consultar(request: Request, token: str = Depends(jwtBearer)):
     # Verificar o token JWT
     payload = verify_token(token)
 
