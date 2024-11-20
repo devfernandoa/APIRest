@@ -1,28 +1,28 @@
 # Deploy da aplicação no AWS
 
-Foi realizado o deploy da aplicação no AWS. A api está disponível aqui <http://adbe7da273daf4e57b65b81b2ff69d8e-1337457466.us-east-1.elb.amazonaws.com/>
+Foi realizado o deploy da aplicação no AWS. A api está disponível aqui <https://apirest.fernandoa.dev/> ou se não funcionar (culpa da cloudflare) aqui <http://adbe7da273daf4e57b65b81b2ff69d8e-1337457466.us-east-1.elb.amazonaws.com/>
 
 A aplicação foi hospedada em um cluster EKS (Elastic Kubernetes Service) e está disponível em um Load Balancer. A documentação foi gerada automaticamente pelo FastAPI e está disponível no endpoint `/docs`.
 
-!!swagger openapi.json!!
+!!swagger-http https://apirest.fernandoa.dev/openapi.json!!
 
 ## Realização do Deploy
 
 Para realizar o deploy da aplicação no AWS, foi necessário seguir os seguintes passos (Após estar logado no AWS CLI):
 
-1. Criar um cluster EKS:
+- Criar um cluster EKS:
 
 ```bash
 eksctl create cluster --name fastapi-cluster --region us-east-1 --nodes 2
 ```
 
-2. Configurar o kubectl para acessar o cluster:
+- Configurar o kubectl para acessar o cluster:
 
 ```bash
 aws eks --region us-east-1 update-kubeconfig --name fastapi-cluster
 ```
 
-3. Criar um arquivo `db-deployment.yaml` com as configurações do deployment para a base de dados:
+- Criar um arquivo `db-deployment.yaml` com as configurações do deployment para a base de dados:
 
 ```yaml
 apiVersion: apps/v1
@@ -63,7 +63,7 @@ spec:
     app: postgres
 ```
 
-4. Criar um arquivo `web-deployment.yaml` com as configurações do deployment para a aplicação:
+- Criar um arquivo `web-deployment.yaml` com as configurações do deployment para a aplicação:
 
 ```yaml
 apiVersion: apps/v1
@@ -102,14 +102,14 @@ spec:
     app: fastapi
 ```
 
-5. Aplicar os deployments no cluster:
+- Aplicar os deployments no cluster:
 
 ```bash
 kubectl apply -f db-deployment.yml
 kubectl apply -f web-deployment.yml
 ```
 
-6. Acessar a aplicação no Load Balancer:
+- Acessar a aplicação no Load Balancer:
 
 ```bash
 kubectl get svc fastapi-service
