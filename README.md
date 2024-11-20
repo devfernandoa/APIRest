@@ -4,7 +4,7 @@ Este projeto é uma API REST construída com FastAPI e PostgreSQL. A API permite
 
 [Acesse a documentação aqui!](https://devfernandoa.github.io/APIRest)
 
-[Imagem no Docker Hub](https://hub.docker.com/repository/docker/devfernandoa/apirest)
+[Imagem no Docker Hub](https://hub.docker.com/r/fernandoalzueta/apirest)
 
 [Video de Demonstração](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
