@@ -82,13 +82,7 @@ def get_db():
 
 def jwtBearer(credentials: HTTPAuthorizationCredentials = Depends(oauth2_scheme)):
     token = credentials.credentials
-    try:
-        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-    except jwt.ExpiredSignatureError:
-        raise HTTPException(status_code=403, detail="Token expirado")
-    except jwt.InvalidTokenError:
-        raise HTTPException(status_code=403, detail="Token inválido")
-    return payload
+    return verify_token(token)
 
 # Endpoint para registrar o usuário
 @app.post("/registrar")
