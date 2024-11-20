@@ -9,6 +9,7 @@ import jwt
 from datetime import datetime, timedelta
 import bcrypt
 import requests
+from fastapi.middleware.cors import CORSMiddleware
 
 # Configura do JWT
 SECRET_KEY = os.getenv("SECRET_KEY", "SENHA_MUITO_BOA_UAU@!@#$")
@@ -42,6 +43,14 @@ class UserDB(Base):
 
 # Inicializar a aplicação FastAPI
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
