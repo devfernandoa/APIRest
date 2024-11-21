@@ -58,19 +58,11 @@ oauth2_scheme = HTTPBearer()
 # Função para criar um token JWT
 def create_access_token(data: dict):
     to_encode = data.copy()
-    to_encode.update({"iat": datetime.utcnow()})
+    expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
+    to_encode.update({"exp": expire})
+    
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
     return encoded_jwt
-
-# Função para verificar o token JWT
-def verify_token(token: str):
-    try:
-        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        return payload
-    except jwt.ExpiredSignatureError:
-        raise HTTPException(status_code=403, detail="Token expirado")
-    except jwt.InvalidTokenError:
-        raise HTTPException(status_code=403, detail="Token inválido")
 
 # Dependência para obter a sessão do banco de dados
 def get_db():
@@ -80,9 +72,23 @@ def get_db():
     finally:
         db.close()
 
-def jwtBearer(credentials: HTTPAuthorizationCredentials = Depends(oauth2_scheme)):
+def tokenBearer(credentials: HTTPAuthorizationCredentials = Depends(oauth2_scheme)):
     token = credentials.credentials
-    return verify_token(token)
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        
+        email: str = payload.get("email")
+        if email is None:
+            raise HTTPException(status_code=403, detail="Email inválido")
+             
+    except jwt.ExpiredSignatureError:
+        raise HTTPException(status_code=403, detail="Token expirado")
+    except jwt.InvalidSignatureError:
+        raise HTTPException(status_code=403, detail="Token inválido")
+    except:
+        raise HTTPException(status_code=403, detail="Token inválido")
+
+    return email
 
 # Endpoint para registrar o usuário
 @app.post("/registrar")
@@ -139,10 +145,7 @@ def login(login: Login, db: Session = Depends(get_db)):
 
 # Endpoint para consultar dados
 @app.get("/consultar")
-def consultar(request: Request, token: str = Depends(jwtBearer)):
-    # Verificar o token JWT
-    payload = verify_token(token)
-
+def consultar(request: Request, token: str = Depends(tokenBearer)):
     # Realizar a requisição à API do Open-Meteo
     url = "https://api.open-meteo.com/v1/forecast?latitude=-46.67&longitude=-23.59&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m"
     headers = {
