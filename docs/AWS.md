@@ -5,6 +5,11 @@ Foi realizado o deploy da aplicação no AWS. A api está disponível em [https:
 ???+ danger "Caso o link quebre"
     Existe uma possibilidade do link acima não funcionar (culpa da cloudflare), caso isso aconteça, o serviço também está disponível [aqui](http://adbe7da273daf4e57b65b81b2ff69d8e-1337457466.us-east-1.elb.amazonaws.com/docs)
 
+???+ success "Vídeo de demonstração"
+    <video width="640"  controls>
+        <source src="./demo.mp4" type="video/mp4">
+    </video>
+
 A aplicação foi hospedada em um cluster EKS (Elastic Kubernetes Service) e está disponível em um Load Balancer. A documentação foi gerada automaticamente pelo FastAPI e está disponível no endpoint `/docs`.
 
 !!swagger-http https://apirest.fernandoa.dev/openapi.json!!
