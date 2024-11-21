@@ -1,10 +1,10 @@
 # Deploy da aplicação no AWS
 
-Foi realizado o deploy da aplicação no AWS. A api está disponível aqui <https://apirest.fernandoa.dev/> ou se não funcionar (culpa da cloudflare) aqui <http://adbe7da273daf4e57b65b81b2ff69d8e-1337457466.us-east-1.elb.amazonaws.com/>
+Foi realizado o deploy da aplicação no AWS. A api está disponível [aqui](https://apirest.fernandoa.dev/) ou se não funcionar (culpa da cloudflare) [aqui](http://adbe7da273daf4e57b65b81b2ff69d8e-1337457466.us-east-1.elb.amazonaws.com/)
 
 A aplicação foi hospedada em um cluster EKS (Elastic Kubernetes Service) e está disponível em um Load Balancer. A documentação foi gerada automaticamente pelo FastAPI e está disponível no endpoint `/docs`.
 
-!!swagger-http https://apirest.fernandoa.dev/openapi.json!!
+!!swagger-http <https://apirest.fernandoa.dev/openapi.json>!!
 
 ## Realização do Deploy
 
