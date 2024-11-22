@@ -124,7 +124,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#endpoint-consultar" class="md-skip">
+        <a href="#endpoint-registrar" class="md-skip">
           Skip to content
         </a>
       
@@ -433,9 +433,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cabecalhos" class="md-nav__link">
+  <a href="#parametros" class="md-nav__link">
     <span class="md-ellipsis">
-      Cabeçalhos
+      Parâmetros
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplo-de-requisicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Requisição
     </span>
   </a>
   
@@ -453,7 +462,7 @@
         <li class="md-nav__item">
   <a href="#gif-do-funcionamento" class="md-nav__link">
     <span class="md-ellipsis">
-      GIF do funcionamento
+      Gif do funcionamento
     </span>
   </a>
   
@@ -591,9 +600,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cabecalhos" class="md-nav__link">
+  <a href="#parametros" class="md-nav__link">
     <span class="md-ellipsis">
-      Cabeçalhos
+      Parâmetros
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplo-de-requisicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Requisição
     </span>
   </a>
   
@@ -611,7 +629,7 @@
         <li class="md-nav__item">
   <a href="#gif-do-funcionamento" class="md-nav__link">
     <span class="md-ellipsis">
-      GIF do funcionamento
+      Gif do funcionamento
     </span>
   </a>
   
@@ -635,40 +653,32 @@
   
 
 
-<h1 id="endpoint-consultar">Endpoint: Consultar</h1>
+<h1 id="endpoint-registrar">Endpoint: Registrar</h1>
 <h2 id="descricao">Descrição</h2>
-<p>Consulta dados meteorológicos (requer autenticação).</p>
+<p>Registra um novo usuário na aplicação.</p>
 <h2 id="url">URL</h2>
-<p><code>/consultar</code></p>
+<p><code>/registrar</code></p>
 <h2 id="metodo-http">Método HTTP</h2>
-<p><code>GET</code></p>
-<h2 id="cabecalhos">Cabeçalhos</h2>
+<p><code>POST</code></p>
+<h2 id="parametros">Parâmetros</h2>
 <ul>
-<li><code>Authorization</code>: Bearer token_jwt_aqui</li>
+<li><code>nome</code>: Nome do usuário (string)</li>
+<li><code>email</code>: Email do usuário (string)</li>
+<li><code>senha</code>: Senha do usuário (string)</li>
 </ul>
-<h2 id="exemplo-de-resposta">Exemplo de Resposta</h2>
+<h2 id="exemplo-de-requisicao">Exemplo de Requisição</h2>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-46.67</span><span class="p">,</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-23.59</span><span class="p">,</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;timezone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;America/Sao_Paulo&quot;</span><span class="p">,</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;current&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-10-01T00:00:00Z&quot;</span><span class="p">,</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">&quot;temperature_2m&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">25.0</span><span class="p">,</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">&quot;wind_speed_10m&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5.0</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="p">},</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nt">&quot;hourly&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-10-01T01:00:00Z&quot;</span><span class="p">,</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">      </span><span class="nt">&quot;temperature_2m&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">24.0</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">      </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-10-01T02:00:00Z&quot;</span><span class="p">,</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">      </span><span class="nt">&quot;temperature_2m&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">23.0</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">  </span><span class="p">]</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="p">}</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;nome&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Disciplina Cloud&quot;</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cloud@insper.edu.br&quot;</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;senha&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cloud0&quot;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
 </span></code></pre></div>
-<h2 id="gif-do-funcionamento">GIF do funcionamento</h2>
+<h2 id="exemplo-de-resposta">Exemplo de Resposta</h2>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;jwt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkRpc2NpcGxpbmEgQ2xvdWQiLCJpYXQiOjE1MTYyMzkwMjJ9.s76o9X4UIANSI-aTF8UhqnBYyIRWw_WH4ut8Xqmo6i0&quot;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="gif-do-funcionamento">Gif do funcionamento</h2>
 <p><a class="glightbox" href="../ExemploRegistrar.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Exemplo Registrar" src="../ExemploRegistrar.gif" /></a></p>
 
 

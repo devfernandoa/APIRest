@@ -1,41 +1,46 @@
-# Endpoint: Registrar
+# Endpoint: Consultar
 
 ## Descrição
 
-Registra um novo usuário na aplicação.
+Consulta dados meteorológicos (requer autenticação).
 
 ## URL
 
-`/registrar`
+`/consultar`
 
 ## Método HTTP
 
-`POST`
+`GET`
 
-## Parâmetros
+## Cabeçalhos
 
-- `nome`: Nome do usuário (string)
-- `email`: Email do usuário (string)
-- `senha`: Senha do usuário (string)
-
-## Exemplo de Requisição
-
-```json
-{
-    "nome": "Disciplina Cloud",
-    "email": "cloud@insper.edu.br",
-    "senha": "cloud0"
-}
-```
+- `Authorization`: Bearer token_jwt_aqui
 
 ## Exemplo de Resposta
 
 ```json
 {
-    "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkRpc2NpcGxpbmEgQ2xvdWQiLCJpYXQiOjE1MTYyMzkwMjJ9.s76o9X4UIANSI-aTF8UhqnBYyIRWw_WH4ut8Xqmo6i0"
+  "latitude": -46.67,
+  "longitude": -23.59,
+  "timezone": "America/Sao_Paulo",
+  "current": {
+    "time": "2023-10-01T00:00:00Z",
+    "temperature_2m": 25.0,
+    "wind_speed_10m": 5.0
+  },
+  "hourly": [
+    {
+      "time": "2023-10-01T01:00:00Z",
+      "temperature_2m": 24.0
+    },
+    {
+      "time": "2023-10-01T02:00:00Z",
+      "temperature_2m": 23.0
+    }
+  ]
 }
 ```
 
-## Gif do funcionamento
+## GIF do funcionamento
 
-![Exemplo Registrar](ExemploRegistrar.gif)
+![Exemplo Registrar](ExemploConsultar.gif)
